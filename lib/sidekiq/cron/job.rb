@@ -810,6 +810,8 @@ module Sidekiq
         else
           klass.get_sidekiq_options
         end
+      rescue Exception
+        {"queue"=>"default"}
       end
     end
   end
